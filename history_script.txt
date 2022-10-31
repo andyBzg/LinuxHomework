@@ -17,3 +17,24 @@
   16 ./fiftyfiles.sh 
   17 ls /tmp/test/
   18 history > /tmp/history.txt
+
+
+sleeper.sh
+#!/bin/bash
+for run in {1..10}
+do
+date +"%H:%M:%S"
+ps -ef | wc -l
+sleep 3
+done
+
+processor.sh
+#!/bin/bash
+lscpu > file.txt
+cat /etc/os-release | head -1 | awk '{print $1}' >> file.txt
+cat /etc/os-release | head -1 | awk '{print $1}' | sed 's/NAME="//g' >> file.txt
+
+fiftyfiles.sh
+#!/bin/bash
+mkdir /tmp/test/
+touch /tmp/test/{50..100}.txt
